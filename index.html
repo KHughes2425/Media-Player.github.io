@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Youtube Player API</title>
-    <link rel="stylesheet" href="c/main.css">
-    <script src="j/main.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <body>
-    
-    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-        <div id="player"></div>
-     <div class="controls">
-         <button id="myplay">Play</button>
-         <button id="mypause">Pause</button>
-         <button id="slo">Slo Mo</button>
-         <button id="normal">normal speed</button>
-         <button id="fast">Fast Forward</button>
-     </div>  
- <article id="info">
-
- </article>
-
+  <div class="container">
+    <div class="row">
+      <div class="btn-group">
+        <button id="play" type="button" class="btn btn-primary disabled">Play</button>
+        <button id="pause" type="button" class="btn btn-primary disabled">Pause</button>
+        <button id="stop" type="button" class="btn btn-primary disabled">Stop</button>
+        <button id="volup" type="button" class="btn btn-primary disabled">Vol Up</button>
+        <button id="voldown" type="button" class="btn btn-primary disabled">Vol Down</button>
+        <button id="mute" type="button" class="btn btn-primary disabled">Mute</button>
+        <button id="speed" type="button" class="btn btn-primary disabled">Speed Up</button>
+        <button id="slow" type="button" class="btn btn-primary disabled">Slow Down</button>
+      </div>
+    </div>
+    <div class="row">
+      <div id="player-container">
+        <div id="player-div"></div>
+      </div>
+    </div>
+  </div>
+  
 </body>
 </html>
