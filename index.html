@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Media Player</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/styles.css" />
+        <script src="java/java.js" defer></script>
+    </head>
+    <body>
+        <div class="stage">
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+          </div>
+          
+          <style>
+            * *, *::before, *::after { 
+              animation-play-state: running !important;
+            }
+          </style>
+          <script>window.setTimeout = null;</script>
+          
+        <h2>Choose a Song!</h2>
+        <audio class="low-rider" controls>
+            <source src="audio/Everybody Wants To Rule The World.mp3" type="audio/mp3" />
+            <p>
+                Here is a link to the audio file itself
+                <a href="audio/Everybody Wants To Rule The World.mp3">Audio here</a>
+            </p>
+        </audio>
+        <div class="audio-controls">
+            <button id="ff">ff</button>
+            <button id="slo">slow mo</button>
+            <button id="normal">normal</button>
+            <select name="pick" id="pick">
+                <option value="audio/Everybody Wants To Rule The World.mp3">Everybody Wants to Rule the World</option>
+                <option value="audio/Stray Kids - Any.mp3">Stray Kids - Any</option>
+                <option value="audio/Party Junkie.mp3">Party Junkie</option>
+            </select>
+        </div>
+
+        <hr />
+
+        <h2>A silly edit I made for Youtube 3 years ago!</h2>
+        <video class="leverage" id="leverage" controls>
+            <source src="videos/video.webm" type="video/webm" />
+            <source src="videos/video.mp4" type="video/mp4" />
+            <track
+                label="on"
+                kind="captions"
+                srclang="en"
+                src="captions/video.vtt"
+            <p>
+                Here is a link to the video file itself
+                <a href="videos/video.mp4">Video here</a>
+            </p>
+        </video>
+
+
+    </body>
+</html>
