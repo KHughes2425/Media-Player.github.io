@@ -1,86 +1,81 @@
-var player;
+document.addEventListener("DOMContentLoaded", init);
 
-// This code loads the IFrame Player API code asynchronously. This is the Youtube-recommended script loading method
-var tag = document.createElement("script");
-tag.src = "https://youtube.com/iframe_api";
-tag.id = "youtubeScript";
-var firstScriptTag = document.getElementsByTagName("script")[1];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+function init() {
+    const lowRider = document.querySelector(".low-rider");
+    const leverage = document.querySelector(".leverage");
+    const ff = document.getElementById("ff");
+    const slo = document.getElementById("slo");
+    const normal = document.getElementById("normal");
+    const pick = document.getElementById("pick");
 
-// Create youtube player (function called by YouTube API)
-function onYouTubeIframeAPIReady() {
-	player = new YT.Player("player-div", {
-		width: "562",
-		videoId: "M7lc1UVf-VE",
-		playerVars: {
-			autoplay: 0,
-			controls: 0,
-			rel: 0,
-			fs: 0,
-			showinfo: 0,
-			modestbranding: 1
-		},
-		events: {
-			onReady: onPlayerReady,
-			onStateChange: onPlayerStateChange
-		}
-	});
+    /**
+     * prepare the audio and video for playing
+     */
+    lowRider.src = "audio/Everybody Wants To Rule The World.mp3";
+    lowRider.load();
+    lowRider.volume = 0.5;
+
+    //set video's initial volume
+    leverage.volume = 0.5;
+
+    /**
+     * create the button event listeners to control the audio
+     */
+
+    ff.addEventListener("click", (e) => {
+        lowRider.playbackRate = 2;
+    });
+
+    slo.addEventListener("click", (e) => {
+        lowRider.playbackRate = 0.5;
+    });
+
+    normal.addEventListener("click", (e) => {
+        lowRider.playbackRate = 1;
+    });
+
+    /**
+     * select lists emit a "change" event when the choice is changed
+     */
+    pick.addEventListener("change", (e) => {
+        // save the audio's current place in the song.
+        let time = lowRider.currentTime;
+
+        lowRider.src = e.target.value;
+        lowRider.load();
+        lowRider.play();
+
+        // set the new song to the same place as the previous one.
+        lowRider.currentTime = time;
+    });
+} // end init function
+
+document.addEventListener("DOMContentLoaded", (e) => {
+
+    var myCues = [
+        {seconds: 2, callback: func1},
+        {seconds: 5, callback: func2},
+        {seconds: 10, callback: func3},
+    ];
+
+    cueTimer.setup("leverage", myCues);
+
+    const vid = document.querySelector("#leverage");
+    const selectList = document.querySelector("#pick");
+
+    selectList.addEventListener("change", (e) => {
+        selectVideo(e, pick);
+    });
+});
+
+
+
+function func1(){
+    console.log("backgroundChange");
+    document.body.style.backgroundColor = "green";
 }
-// Player ready handler. Autoplay video when player is ready
-function onPlayerReady(event) {
-	$('.btn').removeClass( "disabled" );
-}
 
-$('#play').click(function(){ player.playVideo(); });
+function func2({
+    
+})
 
-$('#pause').click(function(){ player.pauseVideo(); });
-
-$('#stop').click(function(){ player.stopVideo(); });
-
-$('#speed').click(function(){ 
-	var rate = player.getPlaybackRate();
-	player.setPlaybackRate(rate + 0.25); 
-});
-
-$('#slow').click(function(){
-	var rate = player.getPlaybackRate();
-	if (rate > 0.25)
-	{
-		player.setPlaybackRate(rate - 0.25); 
-	}
-});
-
-$('#mute').click(function()
-{
-	if(player.isMuted())
-	{
-		player.unMute();
-		$('#mute').text('Mute');
-	}
-	else
-	{
-		player.mute();
-		$('#mute').text('Unmute');
-	}
-});
-
-
-$('#volup').click(function(){ 
-	var volume = player.getVolume();
-	if (volume <= 95)
-	{
-		player.setVolume(volume + 5); 
-	}
-});
-
-$('#voldown').click(function(){
-	var volume = player.getVolume();
-	if (volume > 5)
-	{
-		player.setVolume(volume - 5); 
-	}
-});
-// Video state change handler.
-function onPlayerStateChange(event) {
-
-}
