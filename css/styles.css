@@ -91,7 +91,6 @@ iframe {
 
 button{
   margin-top: 10px;
-  border-radius: px;  
 
 }
 
@@ -149,8 +148,6 @@ button{
   width: 100%;
   position: absolute;
   top: 20px;
-  color:linear-gradient(180deg, #fff, #ffadbb, #f3ffbe);
-  ;
   letter-spacing: -2px;
   text-shadow: 4px 0 10px rgba(0, 0, 0, 0.13);
 }
