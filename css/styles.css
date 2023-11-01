@@ -1,53 +1,127 @@
-.controls button[data-state="subtitles"]{
-    height:85%;
-    text-indent: 0;
-    font-size: 16px;
-    font-weight: bold;
-    background:#000;
-    border-radius:2px;
+* *, *::before, *::after { 
+  animation-play-state: running !important;
+}
+
+*{
+  font-family: 'Salsa', cursive;
 }
 
 
-.leverage{
-    max-width: 70%;
-    min-width: 70%;
-    margin: 0 auto;
-    border: 3px solid black;
+
+
+
+#myplay, #mypause, #slo, #normal, #fast{
+  font-size: 2rem;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+
+}
+
+.layout2, .myframe {
+  display: block;
+}
+
+#info {
+  width: 100vw;
+  height: 500px;
+}
+
+#container {
+  display:flex;
+  grid-gap: 1rem;
+  flex-direction:column;
+  position: relative;
+  max-width: 1024px;
+  margin-top:5rem;
+}
+
+#bleh{
+  display:flex;
+  flex-direction:column;
+  width:85%;
+  margin-top:11rem;
+  
+}
+
+
+.Korea{
+  font-size:1rem;
+  text-align:center;
+}
+
+#player{
+  width:90%;
+  height:50vh;
+  margin-top:-15rem;
+  margin-left:175px;
+  
 }
 
 h1{
-    font-family: 'Pangolin', cursive;
-    text-align: center;
-    color:white;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 50px;
+  width:50%;
+  margin: 0 auto;
+  padding:5px;
 }
 
-h2{
-    font-family: 'Pangolin', cursive;
-    font-size:2rem;
-    color:white;
-    text-shadow: #f3ffbe;
+iframe {
+	height:80vh;
+  width:60%;
+  border: 10px solid black;
+  margin-top:11rem;
+  margin-left:150px;
+
+
 }
+
+.controls{
+  display:flex;
+  flex-direction: row;
+  grid-gap:10px;
+  border-radius: 50px;
+  width:40%;
+  margin: 0 auto;
+
+}
+
+
+
 
 button{
-    padding:8px;
-    font-family: 'Pangolin', cursive;
-    background-color: azure;
+  margin-top: 10px;
+  border-radius: px;  
+
 }
 
-audio{
-    border: 3px solid rgb(167, 23, 83);
-    border-radius: 50px;
+.button:hover {
+  background-color: #4caf4ff1; /* Green */
+  color: rgb(255, 0, 0);
 }
 
-body{
-    background-color:black;
-    padding:15px;
+
+
+.myFrame{
+  margin: 0 auto;
+  border: 10px solid rgb(255, 119, 0);
 }
+
+.col2{
+  float:right;
+  width:50%;
+  position:relative;
+  margin-top:-1270px;
+  height:40vh;
+}
+
 
 .stage {
+  position:absolute;
   height: 300px;
-  width: 500px;
-  margin: auto;
+  width: 450px;
+  margin-top: 43rem;
+  margin-left:18rem;
   top: 0;
   right: 0;
   bottom: 0;
@@ -67,8 +141,8 @@ body{
 }
 
 .layer:after {
-  font: 100px/0.65 "Pacifico", "Kaushan Script", Futura, "Roboto", "Trebuchet MS", Helvetica, sans-serif;
-  content: "Media\a    Player!";
+  font: 90px/1 'Salsa', cursive;;
+  content: "K-Pop\a Media Player!";
   white-space: pre;
   text-align: center;
   height: 100%;
@@ -188,3 +262,4 @@ body{
     transform: rotateX(-30deg) rotateY(-15deg);
   }
 }
+
